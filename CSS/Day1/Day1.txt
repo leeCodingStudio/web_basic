@@ -94,7 +94,7 @@ indent-rainbow
 
 
 5. 그룹 선택자
-여러개의 요소를 나열하고 , 로 구분하여 스타일을 적영
+여러개의 요소를 나열하고 , 로 구분하여 스타일을 적용
     h2, p { text-align: center;}
 
 
@@ -165,7 +165,7 @@ HTML 구조 확인하기
     li 요소 중에서 첫번째 해당하는 요소의 스타일을 적용
     예) ul > li:first-child { color: deeppink; }
 
-    li:lasr-child
+    li:last-child
     li 요소 중에서 마지막에 해당하는 요소의 스타일을 적용
 
     li:nth-child(n)
