@@ -1,0 +1,28 @@
+main {
+    width: 1000px;
+    margin: 0px auto;
+}
+.box {
+    margin: 10px 0;
+    border: 1px solid;
+    padding: 30px 20px;
+}
+
+.container{
+    position: relative;
+}
+
+.content{
+    float: left;
+    width: 700px;
+}
+
+.sidebar{
+    float: right;
+    width: 200px;
+    background-color: gold;
+}
+
+.footer{
+    clear: both;
+}
