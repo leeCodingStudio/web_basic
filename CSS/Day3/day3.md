@@ -94,3 +94,32 @@ flex-flow: row nowrap;
 - print: 프린터
 - speech: 스크린 리더
 
+# em 과 rem
+- 상대적인 크기를 정하는 단위
+
+### em
+- 부모 요소 크기의 몇 배 인지를 단위로 설정
+    - pc의 일반 텍스트 크기: 16px(브라우저의 기본값), 16px = 1em
+    - 모바일의 일반 텍스트 크기: 12px(모바일의 기본값), 12px = 1em
+    - pc의 예)
+        ```
+        #hello { font-size: 2em }
+
+        <div id="hello">
+            <div>안녕하세요</div>   <!-- 1em = 32px -->
+        </div>
+        ```
+
+### rem
+- 문서의 최상위 요소(html)의 몇 배 인지로 크기를 설정
+
+    pc의 예)
+        ```
+        html { font-size: 2rem }
+
+        <html>
+            <body> <!-- 글자 크기가 모두 2rem = 32px로 적용 -->
+                <div> ... </div>
+            </body>
+        </html>
+        ```
