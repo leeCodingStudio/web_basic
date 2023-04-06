@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생성적표</title>
+</head>
+<body>
+    <h2>학생성적표</h2>
+    <script>
+        const name =  prompt('이름을 입력하세요.');
+        const kor =  Number(prompt('국어점수를 입력하세요.'));
+        const math =  Number(prompt('수학점수를 입력하세요.'));
+        const eng =  Number(prompt('영어점수를 입력하세요.'));
+        const tot = kor + math + eng;
+        const avg = tot / 3;
+        
+        console.log(`${name}님의 성적표`);
+        console.log(`국어: ${kor}점`);
+        console.log(`수학: ${math}점`);
+        console.log(`영어: ${eng}점`);
+        console.log(`총점: ${tot}점`);
+        console.log(`평균: ${avg}점`);
+    </script>
+</body>
+</html>
