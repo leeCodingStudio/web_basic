@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규 표현식</title>
+    <script>
+        function sendit() {
+            
+            const userid = document.getElementById('userid');
+            const name = document.getElementById('name');
+            // alert(userid.value);
+
+            // 정규 표현식
+            // 아이디
+            const expIdText = /^[A-Za-z]{4,20}$/;
+
+            // 이름
+            const expNameText = /^[가-힣]+$/;
+
+            // 아이디 체크
+            if (expIdText.test(userid.value)){
+                alert('아이디 정규표현식 통과!');
+            }else{
+                alert('아이디 정규표현식 통과 실패!');
+            }
+            // 이름 체크
+            if (expNameText.test(name.value)){
+                alert('이름 정규표현식 통과!');
+            }else{
+                alert('이름 정규표현식 통과 실패!');
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <h2>정규 표현식</h2>
+    <p>아이디: <input type="text" id="userid"></p>
+    <p>이름: <input type="text" id="name"></p>
+    <p><button onclick="sendit()">확인</button></p>
+</body>
+</html>
