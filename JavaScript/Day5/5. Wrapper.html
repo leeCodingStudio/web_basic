@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wrapper</title>
+</head>
+<body>
+    <h2>Wrapper</h2>
+    <script>
+        const num = 10; // number 원시 타입
+        console.log(typeof(num));
+        console.log(num.toString());
+        console.log(typeof(num.toString()));
+        console.log(typeof(num));
+
+        // 지수 표기법(10의 n승으로 표기)
+        const x1 = 102;
+        console.log(x1.toExponential());
+
+        // 반올림 하여 문자열로 변환
+        const x2 = 1234.12;
+        console.log(x2.toFixed());
+
+        // 로컬형식의 문자형으로 변환
+        console.log(x2.toLocaleString('ar-EG'));
+
+        const x3 = 0.1 + 0.2 - 0.2;
+        console.log(x3);
+
+        console.log(globalThis);
+
+        const URL = 'https://코리아아이티아카데미.com';
+        const encoded = encodeURI(URL);
+        console.log(encoded);
+
+        const decoded = decodeURI(encoded);
+        console.log(decoded);
+
+        const encodedCom = 'https://코리아아이티아카데미.com';
+        console.log(encodeURIComponent(encodedCom));
+    </script>
+</body>
+</html>

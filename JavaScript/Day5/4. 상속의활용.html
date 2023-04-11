@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상속의 활용</title>
+</head>
+<body>
+    <h2>상속의 활용</h2>
+    <script>
+        class Animal {
+            constructor(color){
+                this.color = color;
+            }
+            eat() {
+                console.log('먹는다!');
+            }
+            sleep() {
+                console.log('잔다!');
+            }
+        }
+
+        class Dog extends Animal {
+            play(){
+                console.log('논다!');
+            }
+        }
+
+        const Rucy = new Dog('white');
+        console.log(Rucy);
+        Rucy.eat();
+        Rucy.sleep();
+        Rucy.play();
+
+        class Cat extends Animal {
+            constructor(color, name){
+                super(color);
+                this.name = name;
+            }
+
+            // 오버라이딩
+            eat(){
+                console.log('맛있게 먹는다!');
+            }
+        }
+
+        const Horang = new Cat('black', '호랑');
+        console.log(Horang);
+        Horang.eat();
+        console.log('----------------');
+
+        // 문제
+        // 정직원, 아르바이트를 나타낼 수 있는 클래스를 생성
+        // FullTimeEmployee, PartTimeEmployee
+        // 직원의 정보: 이름, 부서명, 한달 근무 시간
+        // 급여: 정직원(20000), 아르바이트(10000)
+        // 매달 직원들의 정보를 이용해서 한달 급여를 계산하는 메소드를 구현(calculatePay())
+        // 예) kim.calculatePay() -> 한달 급여
+
+        // class Employee{
+        //     constructor(name, part, time){
+        //         this.name = name;
+        //         this.part = part;
+        //         this.time = time;
+        //     }
+        // }
+
+        // class FullTimeEmployee extends Employee{
+        //     calculatePay = () => {
+        //         return this.time * 20000;
+        //     }
+        // }
+
+        // class PartTimeEmployee extends Employee{
+        //     calculatePay = () => {
+        //         return this.time * 10000;
+        //     }
+        // }
+
+        // const apple = new FullTimeEmployee('김사과', '주방', 20);
+        // console.log(apple.calculatePay());
+
+        // const banana = new PartTimeEmployee('바나나', '포스', 10);
+        // console.log(banana.calculatePay());
+
+        console.log('----------------');
+
+
+        class Employee {
+            constructor(name, department, hoursPerMonth, payRate){
+                this.name = name;
+                this.department = department;
+                this.hoursPerMonth = hoursPerMonth;
+                this.payRate = payRate;
+            }
+            calculatepay(){
+                return this.hoursPerMonth * this.payRate;
+            }
+        }
+
+        class FullTimeEmployee extends Employee {
+            static PAY_RATE = 20000;
+            constructor(name, department, hoursPerMonth){
+                super(name, department, hoursPerMonth, FullTimeEmployee.PAY_RATE)
+            }
+        }
+
+        class PartTimeEmployee extends Employee {
+            static PAY_RATE = 10000;
+            constructor(name, department, hoursPerMonth){
+                super(name, department, hoursPerMonth, PartTimeEmployee.PAY_RATE)
+            }
+        }
+
+        const Kim = new FullTimeEmployee('김사과', '개발자', 160);
+        const Oh = new PartTimeEmployee('오렌지', '디자이너', 100);
+        console.log(Kim.calculatepay());
+        console.log(Oh.calculatepay());
+
+    </script>
+</body>
+</html>
